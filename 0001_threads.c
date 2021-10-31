@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <pthread.h>
 #include <stdlib.h>
+#include <unistd.h>
 
 void *printEmployeeDetails(void * args);
 
@@ -11,7 +12,6 @@ struct employee {
 } *emp;
 
 void empInit(void) {
-
 	emp = (struct employee *)malloc(sizeof(struct employee));
 	emp->name = "Abdul Basith";
 	emp->salary = 80000;
@@ -20,7 +20,6 @@ void empInit(void) {
 
 int main(void) {
 	int count = 0;
-
 	pthread_t ti;
 
 	empInit();
@@ -47,11 +46,9 @@ int main(void) {
 }
 
 void *printEmployeeDetails(void* arg) {
-
 	printf("hello from employee details thread\n");
 	printf("Name: %s\n", emp->name);
 	printf("salary: %d\n", emp->salary);
 	printf("age: %u\n", emp->age);
-
 	return "hello";
 }
