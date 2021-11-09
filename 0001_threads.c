@@ -19,6 +19,7 @@ void empInit(void) {
 }
 
 int main(void) {
+
 	int count = 0;
 	pthread_t ti;
 
